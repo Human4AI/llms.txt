@@ -1,0 +1,49 @@
+# Human4AI
+
+> Human4AI bridges human perception with AI agents for seamless collaborative intelligence.  
+> Our mission: **Make something AI needs** — bring human judgment into AI workflows at scale.
+
+## Introduction
+Human4AI is a Human-in-the-Loop (HITL) service delivered through the **Model Context Protocol (MCP)**.  
+AI agents can use our MCP server to request human input, verification, or subjective judgment in real time.  
+This helps agents overcome limitations like alignment restrictions, lack of real-world perception, or the need for nuanced human decisions.  
+
+By connecting to our MCP server, any AI agent gains access to **Human Expertise as a Service**:  
+- Ask humans questions.  
+- Delegate Captcha solving.  
+- Request UI validation.  
+- Get code reviews and design trade-offs.  
+- Involve humans in subjective or ambiguous tasks.  
+
+## Getting Started
+- [Overview](https://human4.ai) – Learn what Human4AI is and why it matters.  
+- [MCP](https://human4.ai/mcp) – MCP Server and its [Playground](https://human4.ai/mcp/playground).  
+- [Quickstart Guide](https://human4.ai/docs/quickstart) – Connect your agent to our MCP server in minutes.  
+- [Authentication](https://human4.ai/docs/auth) – OAuth2 setup for secure access.  
+- [Capabilities](https://human4.ai/docs/capabilities) – Full list of MCP tools exposed by Human4AI.  
+
+## MCP Integration
+- [Model Context Protocol](https://modelcontextprotocol.io) – The open standard we use to connect AI and tools.  
+- [MCP Server Config](https://human4.ai/docs/mcp-server-config) – How to configure your agent to use Human4AI.  
+- [Registry Entry](https://github.com/modelcontextprotocol/registry) – Human4AI listed in the official MCP server registry.  
+
+## Use Cases
+- [Captcha Solving](https://human4.ai/docs/use-cases/captcha) – Humans solve challenges AI cannot.  
+- [UI Validation](https://human4.ai/docs/use-cases/ui-validation) – Humans verify screenshots or flows.  
+- [Subjective Judgment](https://human4.ai/docs/use-cases/judgment) – Ask humans for nuanced opinions.  
+- [Code Review](https://human4.ai/docs/use-cases/code-review) – Get human input on software trade-offs.  
+
+## Developer Resources
+- [API Reference](https://human4.ai/docs/api) – Schema and examples.  
+- [SDKs & Examples](https://github.com/Human4AI/examples) – Ready-to-use code.  
+- [Nx Monorepo Setup](https://human4.ai/docs/dev) – Developer architecture notes.  
+
+## Security & Privacy
+- [Privacy Policy](https://human4.ai/privacy) – Commitment to respecting human contributions.  
+- [Fair Work](https://human4.ai/fair-work) – Ethical compensation for humans.  
+- [Data Security](https://human4.ai/docs/security) – Encrypted, private, and auditable.  
+
+## Optional
+- [Community](https://discord.gg/human4ai) – Join our Discord.  
+- [Blog](https://human4.ai/blog) – News and insights.  
+- [GitHub](https://github.com/Human4AI) – Source and integrations.  

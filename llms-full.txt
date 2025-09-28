@@ -1,0 +1,138 @@
+# Human4AI Full Documentation
+
+> Human4AI bridges human perception with AI agents for seamless collaborative intelligence.  
+> We provide a Model Context Protocol (MCP) server that enables AI agents to request human input, judgment, and perception in real time.  
+> Our mission: **Make something AI needs** — bring human judgment into AI workflows at scale.
+
+---
+
+## Introduction
+
+Human4AI is a **Human-in-the-Loop (HITL) service** that plugs directly into AI agents using the **Model Context Protocol (MCP)**.  
+AI agents can use our MCP server to request human support when they encounter limitations or tasks requiring human perception.  
+
+This includes:
+- **Overcoming alignment restrictions**: e.g., Captcha solving, subjective moderation.  
+- **Providing human judgment**: nuanced decisions, cultural context, ethical reasoning.  
+- **Verification tasks**: screenshot validation, UI correctness, code reviews.  
+
+By treating humans as first-class MCP tools, Human4AI creates a **collaborative intelligence network** where AI agents and humans solve tasks together.
+
+---
+
+## Getting Started
+
+### Quickstart
+1. Connect your AI agent to:  
+   ```
+   https://human4.ai/mcp
+   ```  
+2. Authenticate with OAuth2 (see below).  
+3. Discover available MCP tools automatically via `list_tools`.  
+4. Call tools like `ask_human`, `solve_captcha`, or `verify_ui`.  
+
+Note: You can use https://human4.ai/mcp/playground to test and verify the MCP Server capabilities.
+
+### Authentication
+- OAuth2-based login.  
+- Obtain client ID/secret from Human4AI dashboard.  
+- Exchange for tokens at:  
+  ```
+  https://human4.ai/auth/realms/human4-ai/oauth/token
+  ```  
+- Pass as `Authorization: Bearer <token>` in requests.
+
+---
+
+## Capabilities (MCP Tools)
+
+- **ask_human(question: string)** – Ask a human a free-text question.  
+- **solve_captcha(image: base64)** – Human solves Captcha challenges.  
+- **verify_ui(screenshot: base64, instructions: string)** – Human validates UI screenshots against instructions.  
+- **judgment(context: string, options: [string])** – Human selects among multiple options.  
+- **code_review(diff: string, description: string)** – Human reviews code diffs with context.  
+- **custom_task(description: string)** – Flexible custom tasks for human operators.  
+
+---
+
+## Example Workflows
+
+### Captcha Solving
+**Request:**
+```json
+{
+  "method": "call_tool",
+  "params": {
+    "name": "solve_captcha",
+    "arguments": { "image": "<base64>" }
+  }
+}
+```
+**Response:**
+```json
+{ "result": "x7b9q" }
+```
+
+### UI Validation
+**Request:**
+```json
+{
+  "method": "call_tool",
+  "params": {
+    "name": "verify_ui",
+    "arguments": {
+      "screenshot": "<base64>",
+      "instructions": "Check if the page has a green 'Submit' button"
+    }
+  }
+}
+```
+**Response:**
+```json
+{ "verified": true, "comment": "The button exists and is green." }
+```
+
+---
+
+## Use Cases
+
+- **Captcha Solving**: Humans handle restricted alignment tasks.  
+- **UI Validation**: Humans verify screenshots and design flows.  
+- **Subjective Judgment**: Human reasoning for nuanced decisions.  
+- **Code Review**: Human engineers review software trade-offs.  
+- **Fallback**: AI agents call humans when uncertain.  
+
+---
+
+## Developer Resources
+
+- **API Reference**: JSON-RPC 2.0 over MCP, HTTP transport.  
+- **SDKs**: Node.js, Python, Rust.  
+- **Examples**: Integration samples at GitHub `Human4AI/examples`.  
+- **Infra**: Nx monorepo, Argo CD GitOps, Kubernetes orchestration.  
+
+---
+
+## Security & Privacy
+
+- Fair Work: Humans are ethically compensated.  
+- Privacy: Only context needed for the task is shared.  
+- Data Security: TLS encryption, anonymized operator responses.  
+- Auditability: Logs and replay available with consent.  
+
+---
+
+## Philosophy
+
+We believe that **privacy and intelligence are inseparable**.  
+Human4AI resists centralization of intelligence by giving humans control in AI workflows.  
+Humans are first-class agents in our ecosystem.  
+
+---
+
+## Community & Links
+
+- Discord: https://discord.gg/human4ai  
+- Blog: https://human4.ai/blog  
+- GitHub: https://github.com/Human4AI  
+- Twitter/X: [@Human4AI](https://x.com/Human4AI)  
